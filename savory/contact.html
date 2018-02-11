@@ -122,6 +122,7 @@
 					<div class="col-md-6 animate-box">
 					<h3>Get In Touch</h3>
 
+					<!--
 					<form method="POST" action="mailto:francesco.dipietro1109@gmail.com" enctype="text/plain">
 						<div class="row form-group">
 							<div class="col-md-12">
@@ -147,7 +148,52 @@
 							<input type="submit" value="Send Message" class="btn btn-primary">
 						</div>
 
-					</form>		
+					</form>	
+
+					-->
+
+					<script language="javascript">
+						function send()
+						{
+							//dichiarazione variabili locali
+							var _object = document.mail.object.value;
+							var _to = document.mail.email.value;
+							var _body = document.mail.message.value;
+
+							alert(_object);
+							alert(_to);
+							alert(_body);
+							window.open("mailto:rockcaffe.bari@gmail.com?subject=Feedback"); //Bisogna riuscire ad associare all'oggetto della mail la variabile _object
+						}	
+					</script>
+
+
+					<form name="mail">
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label class="sr-only" for="object">Object</label>
+								<input type="text" name="object" class="form-control" placeholder="Your object">
+							</div>
+							
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label class="sr-only" for="email">Email</label>
+								<input type="text" name="email" class="form-control" placeholder="Your email address">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label class="sr-only" for="message">Message</label>
+								<textarea name="message" cols="30" rows="10" class="form-control" placeholder="Write us something"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Send Message" class="btn btn-primary" onClick="send()">
+						</div>
+					</form>
+	
 
 				</div>
 				<div class="col-md-5 col-md-push-1 animate-box">
@@ -157,7 +203,7 @@
 						<ul>
 							<li class="address">Via Giuseppe Re David, 197 <br> Bari</li>
 							<li class="phone">080 975 3266</li>
-							<li class="email"><a href="mailto:rockcaffe.bari@gmail.com?subject=Feedback?">rockcaffe.bari@gmail.com</a></li>
+							<li class="email"><a href="mailto:rockcaffe.bari@gmail.com?subject=Feedback">rockcaffe.bari@gmail.com</a></li>
 							<li class="url"><a href="http://www.facebook.it/RockCaffeBari">ROCK CAFF&Egrave;</a></li>
 						</ul>
 					</div>
