@@ -156,14 +156,25 @@
 						function send()
 						{
 							//dichiarazione variabili locali
-							var _object = document.mail.object.value;
-							var _to = document.mail.email.value;
+							var _subject = document.mail.subject.value;
+							var _email = document.mail.email.value;
 							var _body = document.mail.message.value;
 
-							alert(_object);
-							alert(_to);
-							alert(_body);
-							window.open("mailto:rockcaffe.bari@gmail.com?subject=Feedback"); //Bisogna riuscire ad associare all'oggetto della mail la variabile _object
+							  if ((_email.indexOf("@") == (-1)) || (_email == "") || (_email == "undefined")) {
+							    alert("Inserire un indirizzo email valido.");
+								document.modulo.email.focus();
+							  }
+							  else if ((_subject == "") || (_subject == "undefined")) {
+							    alert("Inserire un oggetto.");
+								document.modulo.oggetto.focus();
+							  }
+							  else if ((_body == "") || (_body == "undefined")) {
+							    alert("Inserire un messaggio.");
+								document.modulo.messaggio.focus();
+							  }
+							  else {
+							    location.href = "mailto:rockcaffe.bari@gmail.com?Subject=" + _subject + "&Body=" + _body; 
+							  }
 						}	
 					</script>
 
@@ -171,8 +182,8 @@
 					<form name="mail">
 						<div class="row form-group">
 							<div class="col-md-12">
-								<label class="sr-only" for="object">Object</label>
-								<input type="text" name="object" class="form-control" placeholder="Your object">
+								<label class="sr-only" for="subject">Subject</label>
+								<input type="text" name="subject" class="form-control" placeholder="Your subject">
 							</div>
 							
 						</div>
